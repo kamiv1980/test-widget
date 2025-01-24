@@ -3,7 +3,7 @@
 import React from 'react'
 import {Box, Typography, useTheme} from "@mui/material";
 
-export default function ErrorWidget({message}: { message: string }) {
+export default function ErrorWidget({message}: { message: string | undefined }) {
 
     const theme = useTheme()
 

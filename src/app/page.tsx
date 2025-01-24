@@ -4,9 +4,9 @@ import { getWeatherData } from "@/actions/getWeatherData"
 import WeatherWidget from "@/components/WeatherWidget";
 import ErrorWidget from "@/components/ErrorWidget";
 
-export default async function Home(props: { searchParams: Promise<any> }) {
+export default async function Home(props: { searchParams: Promise<Record<string, string | undefined>> })  {
     const searchParams = await props.searchParams;
-    const data = await getWeatherData(searchParams.location || "Kyiv")
+    const data = await getWeatherData(searchParams)
 
 
     return (

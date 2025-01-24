@@ -13,8 +13,8 @@ interface WeatherWidgetProps {
 const WeatherWidget: React.FC<WeatherWidgetProps> = ({ weatherData }) => {
     const theme = useTheme()
     const isSmall = useMediaQuery(theme.breakpoints.down("sm"))
-    const { name } = weatherData.location
-    const date = new Date(weatherData?.location?.localtime).toLocaleDateString("en-US", {
+    const { name, localtime } = weatherData.location
+    const date = new Date(localtime).toLocaleDateString("en-US", {
         weekday: "long",
         month: "long",
         day: "2-digit",

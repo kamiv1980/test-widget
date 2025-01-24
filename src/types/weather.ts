@@ -1,18 +1,23 @@
 export interface WeatherData {
-  error?: string,
-  location?: {
+  location: {
     name: string
     region: string
     country: string
+    localtime: string
   }
-  current?: {
+  current: {
     temp_c: number
+    feelslike_c : number
+    wind_kph : number
+    wind_dir : string
+    pressure_mb : number
+    uv : number
     condition: {
       text: string
       icon: string
     }
   }
-  forecast?: {
+  forecast: {
     forecastday: Array<{
       date: string
       day: {
@@ -27,3 +32,6 @@ export interface WeatherData {
   }
 }
 
+export interface ErrorData {
+  error: string,
+}
